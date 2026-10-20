@@ -24,6 +24,13 @@
     .muted { color: var(--muted); font-size: 13px; }
     code { font-size: 13px; }
     a { color: var(--purple); }
+    h3 { font-size: 14px; margin: 16px 0 4px; }
+    ul { padding-left: 20px; margin: 6px 0; }
+    li { margin: 3px 0; }
+    li > ul { margin: 2px 0; }
+    details { margin-top: 12px; }
+    summary { cursor: pointer; color: var(--muted); font-size: 14px; }
+    hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0 8px; }
   </style>
 </head>
 <body>
@@ -51,7 +58,109 @@
     <h2>If that doesn't work</h2>
     <p>Right-click the button, choose <strong>Save Link As…</strong>, then drag the saved file onto a Firefox window, or use <code>about:addons</code> → gear icon → <strong>Install Add-on From File…</strong>.</p>
 
-    <p class="muted"><a href="https://github.com/belatar/tdt-releases/releases">All releases</a></p>
+    <h2>What's new in 1.5.7</h2>
+    <ul>
+<li>New campaigns of starred games get the green NEW badge in My progress too, and the column header counts them. Hovering the card clears it.</li>
+</ul>
+
+    <details>
+      <summary>Earlier versions</summary>
+      <h3>1.5.6</h3>
+<ul>
+<li>The channels button opens Twitch in a new tab right next to the current one instead of at the end of the tab bar. Links from the toolbar popup do the same.</li>
+<li>When a campaign only counts on one channel, the button shows that channel&#39;s name and opens it directly.</li>
+</ul>
+
+<h3>1.5.5</h3>
+<ul>
+<li>Starred games whose campaigns are all finished no longer get a greyed &quot;Finished&quot; tile in My progress. Their campaigns are in the Finished column.</li>
+</ul>
+
+<h3>1.5.4</h3>
+<ul>
+<li>New <strong>Finished</strong> column on the right of the full view. Finished campaigns of any game move there, with their own filter and a Clear button for the shown ones. When nothing is finished, the column folds away and All campaigns gets two cards per row again.</li>
+</ul>
+
+<h3>1.5.3</h3>
+<ul>
+<li>Claims are matched to the campaign they belong to, so campaigns that give the same reward (like Warframe&#39;s weekly furniture) are told apart.</li>
+<li>A short pause in Twitch&#39;s minute counter no longer triggers &quot;Progress stopped&quot;. It now takes 15 minutes without progress.</li>
+</ul>
+
+<h3>1.5.2</h3>
+<ul>
+<li>Finished campaigns are recognised again: Twitch renamed the list of received rewards.</li>
+<li>Campaigns you have progress in show up even when Twitch&#39;s campaign list leaves them out.</li>
+</ul>
+
+<h3>1.5.1</h3>
+<ul>
+<li>Campaigns that Twitch removes from the in-progress list after you claimed everything stay finished instead of showing 0 progress.</li>
+<li><strong>Copy debug info</strong> also includes what Twitch reports about your drops in progress and rewards received.</li>
+</ul>
+
+<h3>1.5.0</h3>
+<ul>
+<li>The add-on is now called TDT.</li>
+<li><strong>Hide</strong> button on every card. Hidden campaigns are listed in a collapsible Hidden section in the sidebar, with a filter and Unhide.</li>
+<li>&quot;Progressing&quot; moves to the campaign you actually watch after switching streams.</li>
+<li>Claimed campaigns no longer drop back to 0 progress.</li>
+<li>The channels button opens the game&#39;s live channels with drops on Twitch instead of listing channels inside the card.</li>
+</ul>
+
+<h3>1.4.0</h3>
+<ul>
+<li>No twitch.tv tab needs to stay open: checks briefly use a hidden, muted twitch.tv tab when none is open (can be turned off in Settings).</li>
+<li>Twitch query changes are picked up automatically from the twitch.tv pages you open, with manual overrides under Settings → Advanced.</li>
+<li>A Getting started page opens after installing, and login errors come with a button to fix them.</li>
+<li>Installs and updates come from the install page, and Firefox updates the add-on on its own.</li>
+</ul>
+
+    </details>
+
+    <hr>
+    <h2>How it works</h2>
+    <p>Tracks Twitch drop campaigns for the games you choose, notifies you about new, ending and claimable drops, and hides expired campaigns on twitch.tv/drops/inventory.</p>
+<p>It runs entirely in your browser. It reads your existing twitch.tv login cookie to call Twitch&#39;s own GQL API (the same requests the drops pages make). Nothing is sent anywhere else, and it never claims or changes anything on your account.</p>
+
+<h2>Using it</h2>
+<ul>
+<li>Click the toolbar icon. Star games under <strong>All games with drops</strong> to track them.</li>
+<li><strong>My progress</strong> shows active campaigns for starred games, with reward names, your progress per tier, end time, and a warning if your game account isn&#39;t linked.</li>
+<li><strong>Ready to claim</strong> lists finished drops; <strong>Claim</strong> opens the inventory page.</li>
+<li>The badge shows the number of claimable drops (red <code>!</code> means the last check failed; open the popup to see why).</li>
+<li><strong>Full view</strong>: the ⤢ button in the popup opens a full-width page in a tab. It shows every active campaign as a card in columns: My progress, My searches, All campaigns and Finished. Each column scrolls on its own and has its own live filter (all typed words must appear in the game, campaign or publisher name):<ul>
+<li><strong>My progress</strong>: campaigns for your starred games, one per row like a queue. Campaigns that progressed at the last check come first, the rest are sorted by end date. Starred games without any campaign stay greyed out at the bottom and come back as soon as a new campaign starts. Finished campaigns move to the Finished column instead.</li>
+<li><strong>My searches</strong>: campaigns matching your saved searches. A campaign matches when it contains all words of the search. An exact game name ranks highest, then the whole phrase, then the words scattered. Remove a saved search with its ×.</li>
+<li><strong>All campaigns</strong>: everything else (two cards per row while the Finished column is folded away). <strong>Save search</strong> stores the current filter as a saved search, and its matches move to My searches.</li>
+<li><strong>New</strong> campaigns get a green NEW badge: in My progress and All campaigns when they first appear on Twitch, in My searches when a campaign starts matching a saved search. The badge goes away when you hover the card. The column header counts them, <strong>New only</strong> (My searches and All campaigns) shows just those, and <strong>Sort</strong> can put the newest first. Campaigns that already match when you save a search aren&#39;t marked as new. You also get a notification for new matches (can be turned off in Settings).</li>
+</ul>
+</li>
+<li><strong>Finished</strong>: campaigns whose watch-time drops are all earned move from the other columns to the <strong>Finished</strong> column on the right. Its filter narrows the list, and <strong>Clear all</strong> (or <strong>Clear N shown</strong> while filtering) removes the shown ones from it. When nothing is finished, the column folds into a thin strip and All campaigns gets two cards per row again.</li>
+<li><strong>Hide</strong>: the Hide button on a card removes that campaign from all columns and the toolbar popup, and stops its &quot;new match&quot;, &quot;ending soon&quot; and &quot;progress stopped&quot; alerts. Drops ready to claim are still shown. Hidden campaigns are listed under <strong>Hidden</strong> at the bottom of the sidebar (click to expand), with a filter and an <strong>Unhide</strong> button. They&#39;re forgotten once the campaign ends.</li>
+<li>Each card shows the rewards, your progress, and a channels button next to the campaign name. It opens the game&#39;s live channels with drops enabled on Twitch in a new tab and switches to it, so you can pick a stream there:<ul>
+<li><strong>▶ channel name</strong>: the campaign only counts on that one channel, and the button opens it directly.</li>
+<li><strong>N channels</strong>: the campaign only counts on specific channels. Hover the button to see their names.</li>
+<li><strong>Live channels</strong>: any channel with drops enabled counts.</li>
+</ul>
+</li>
+<li>Starred games stay in <strong>My progress</strong> even when they have no campaign. Such games show as &quot;waiting&quot;, and you get an alert as soon as a new campaign starts. Use &quot;Track another game&quot; in the full view to star a game that currently has no campaign (any game that had a campaign since you installed the extension).</li>
+<li><strong>Progress stopped</strong>: if a campaign progressed at the last check and no campaign has progressed at the next one, while that campaign isn&#39;t finished yet, its card shows a red warning and you get a notification (click it to jump to the card). That usually means the stream went offline or stopped counting, so switch to another one. Switching to a stream for a different campaign doesn&#39;t trigger it, since Twitch only advances one campaign at a time. Only one card shows the warning at a time. It disappears as soon as any campaign progresses, or when you press <strong>Dismiss</strong>.</li>
+<li><strong>Troubleshooting</strong> (bottom of Settings): <strong>Reset progress tracking</strong> clears a stuck &quot;Progress stopped&quot; warning and starts the tracking over. <strong>Copy debug info</strong> copies what the extension has stored about progress, plus what Twitch currently reports about your drops in progress and rewards received (names, ids and times only, no login or Twitch tokens), to paste into a bug report. The full view&#39;s sidebar shows the version, and warns if Firefox is still running an older background script after an update.</li>
+<li>Settings (gear icon): check interval, ending-soon threshold, the hidden helper tab, which notifications to show, and hiding expired rows.</li>
+<li><strong>Hidden helper tab</strong>: Twitch only accepts the extension&#39;s checks with a fresh security check from its website. When no twitch.tv tab is open, a check briefly opens twitch.tv in a hidden, muted tab, sends its requests from there and closes it again. Firefox may tell you once that an extension is hiding tabs. An open twitch.tv tab of your own is used instead when there is one. You can turn this off in Settings.</li>
+</ul>
+<p>The first check after installing doesn&#39;t notify about existing campaigns; only campaigns that appear later trigger &quot;New drops&quot; alerts.</p>
+
+<h2>Troubleshooting</h2>
+<ul>
+<li><strong>&quot;You&#39;re not logged in to Twitch&quot;</strong>: press <strong>Log in at twitch.tv</strong> in the popup and log in in the same Firefox profile (not in a private window or a different container), then press ⟳.</li>
+<li><strong>&quot;The hidden twitch.tv tab didn&#39;t finish loading&quot;</strong>: twitch.tv was slow or you aren&#39;t logged in. Press ⟳ to try again, or open any twitch.tv page yourself.</li>
+<li><strong>&quot;Twitch needs a fresh security check&quot;</strong>: only shown when the hidden helper tab is turned off. Open any twitch.tv page (a pinned background tab works well), then press ⟳.</li>
+<li><strong>&quot;Twitch changed the … query&quot;</strong>: the extension learns Twitch&#39;s current queries from the twitch.tv pages you open, and the helper tab opens the matching page by itself. If it persists, open the page named in the message once. As a last resort, enter the <code>sha256Hash</code> from the browser&#39;s Network tab under <strong>Settings → Advanced</strong>.</li>
+</ul>
+<p>The extension hides expired rows on the inventory page itself, so filters in a content blocker for that aren&#39;t needed.</p>
+
   </main>
 </body>
 </html>
