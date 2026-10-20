@@ -3,6 +3,11 @@
     "{6f1c2d9e-4b7a-4c1e-9a52-3d8e7f0b6a14}": {
       "updates": [
         {
+          "version": "1.5.8",
+          "update_link": "https://github.com/belatar/tdt-releases/releases/download/1.5.8/tdt-1.5.8.xpi",
+          "update_hash": "sha256:6454c54b3d95d601f59497bbf09bb81bc1b29df1816a788f891744236eafcb40"
+        },
+        {
           "version": "1.5.7",
           "update_link": "https://github.com/belatar/tdt-releases/releases/download/1.5.7/tdt-1.5.7.xpi",
           "update_hash": "sha256:b43cff6e1ce7ecdb981362ae3241ed3b25d2a73864792f6f98d6d06a95aef589"
