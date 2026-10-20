@@ -1,0 +1,13 @@
+{
+  "addons": {
+    "{6f1c2d9e-4b7a-4c1e-9a52-3d8e7f0b6a14}": {
+      "updates": [
+        {
+          "version": "1.4.0",
+          "update_link": "https://github.com/belatar/tdt-releases/releases/download/1.4.0/twitch-drop-tracker-1.4.0.xpi",
+          "update_hash": "sha256:ee16adc0e3b389dd06ee53f820ac62d6dcbdf6bb59f43b7bb04c8f1e6ccf44c2"
+        }
+      ]
+    }
+  }
+}
