@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Twitch Drop Tracker</title>
+  <link rel="icon" href="icon-96.png">
+  <style>
+    :root { --text:#0e0e10; --muted:#53535f; --line:#dedee3; --purple:#772ce8; --bg:#f7f7f8; --card:#ffffff; --on-purple:#ffffff; color-scheme: light; }
+    @media (prefers-color-scheme: dark) {
+      :root { --text:#efeff1; --muted:#adadb8; --line:#35353b; --purple:#a970ff; --bg:#0e0e10; --card:#1f1f23; --on-purple:#0e0e10; color-scheme: dark; }
+    }
+    body { font: 15px/1.55 "Inter", "Segoe UI", system-ui, sans-serif; color: var(--text); background: var(--bg); margin: 0; padding: 40px 16px; }
+    main { max-width: 560px; margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 28px; }
+    header { display: flex; gap: 14px; align-items: center; }
+    header img { width: 56px; height: 56px; }
+    h1 { font-size: 22px; margin: 0; }
+    .version { color: var(--muted); margin: 2px 0 0; }
+    .install { display: inline-block; margin: 22px 0 6px; padding: 10px 22px; border-radius: 8px; background: var(--purple); color: var(--on-purple); font-weight: 600; text-decoration: none; }
+    .install:focus-visible { outline: 3px solid var(--text); outline-offset: 2px; }
+    h2 { font-size: 15px; margin: 22px 0 6px; }
+    ol { padding-left: 20px; margin: 0; }
+    .muted { color: var(--muted); font-size: 13px; }
+    code { font-size: 13px; }
+    a { color: var(--purple); }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="icon-96.png" alt="">
+      <div>
+        <h1>Twitch Drop Tracker</h1>
+        <p class="version">Version 1.4.0 · Firefox add-on</p>
+      </div>
+    </header>
+
+    <p>Tracks Twitch drop campaigns for the games you choose and notifies you about new, ending and claimable drops. Unofficial, not affiliated with Twitch.</p>
+
+    <a class="install" href="twitch-drop-tracker.xpi">Install in Firefox</a>
+    <p class="muted">Signed by Mozilla. Firefox updates it automatically after the first install.</p>
+
+    <h2>Installing</h2>
+    <ol>
+      <li>Click <strong>Install in Firefox</strong>.</li>
+      <li>If Firefox says it prevented this site from installing software, click <strong>Continue to Installation</strong>.</li>
+      <li>Confirm with <strong>Add</strong>. A <strong>Getting started</strong> page opens and checks your Twitch login.</li>
+    </ol>
+
+    <h2>If that doesn't work</h2>
+    <p>Right-click the button, choose <strong>Save Link As…</strong>, then drag the saved file onto a Firefox window, or use <code>about:addons</code> → gear icon → <strong>Install Add-on From File…</strong>.</p>
+
+    <p class="muted"><a href="https://github.com/belatar/tdt-releases/releases">All releases</a></p>
+  </main>
+</body>
+</html>
