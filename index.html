@@ -39,7 +39,7 @@
       <img src="icon-96.png" alt="">
       <div>
         <h1>TDT</h1>
-        <p class="version">Version 1.5.10 · Firefox add-on</p>
+        <p class="version">Version 1.5.11 · Firefox add-on</p>
       </div>
     </header>
 
@@ -58,14 +58,20 @@
     <h2>If that doesn't work</h2>
     <p>Right-click the button, choose <strong>Save Link As…</strong>, then drag the saved file onto a Firefox window, or use <code>about:addons</code> → gear icon → <strong>Install Add-on From File…</strong>.</p>
 
-    <h2>What's new in 1.5.10</h2>
+    <h2>What's new in 1.5.11</h2>
     <ul>
-<li>In the full view&#39;s sidebar, &quot;My progress&quot; is now called <strong>My games</strong> and &quot;Hidden&quot; is now <strong>Hidden campaigns</strong>.</li>
+<li><strong>All campaigns</strong> takes over the width of every folded column: one column wide with My searches and Finished open, two with one of them folded, three with both folded. It shows up to as many cards per row, fewer when the window is too narrow for them.</li>
+<li>Cards fit narrow columns: no more horizontal scrollbar in a column on windows around 1100–1200px wide.</li>
 </ul>
 
     <details>
       <summary>Earlier versions</summary>
-      <h3>1.5.9</h3>
+      <h3>1.5.10</h3>
+<ul>
+<li>In the full view&#39;s sidebar, &quot;My progress&quot; is now called <strong>My games</strong> and &quot;Hidden&quot; is now <strong>Hidden campaigns</strong>.</li>
+</ul>
+
+<h3>1.5.9</h3>
 <ul>
 <li><strong>My searches</strong> folds into a narrow strip in its place when no campaign matches a saved search, like Finished when nothing is finished.</li>
 <li>Both columns can be folded and unfolded by hand: <strong>‹</strong>/<strong>›</strong> in the column header folds it, clicking the strip opens it. A manual choice holds until the column gets its first campaign or loses its last one.</li>
@@ -151,11 +157,11 @@
 <li><strong>Full view</strong>: the ⤢ button in the popup opens a full-width page in a tab. It shows every active campaign as a card in columns: My progress, My searches, All campaigns and Finished. Each column scrolls on its own and has its own live filter (all typed words must appear in the game, campaign or publisher name):<ul>
 <li><strong>My progress</strong>: campaigns for your starred games, one per row like a queue. Campaigns that progressed at the last check come first, the rest are sorted by end date. Starred games without any campaign stay greyed out at the bottom and come back as soon as a new campaign starts. Finished campaigns move to the Finished column instead.</li>
 <li><strong>My searches</strong>: campaigns matching your saved searches. A campaign matches when it contains all words of the search. An exact game name ranks highest, then the whole phrase, then the words scattered. Remove a saved search with its ×.</li>
-<li><strong>All campaigns</strong>: everything else (two cards per row while the Finished column is folded away). <strong>Save search</strong> stores the current filter as a saved search, and its matches move to My searches.</li>
+<li><strong>All campaigns</strong>: everything else (one card per row, plus up to one more for each folded column: My searches, Finished). <strong>Save search</strong> stores the current filter as a saved search, and its matches move to My searches.</li>
 <li><strong>New</strong> campaigns get a green NEW badge: in My progress and All campaigns when they first appear on Twitch, in My searches when a campaign starts matching a saved search. The badge goes away when you hover the card. The column header counts them, <strong>New only</strong> (My searches and All campaigns) shows just those, and <strong>Sort</strong> can put the newest first. Campaigns that already match when you save a search aren&#39;t marked as new. You also get a notification for new matches (can be turned off in Settings).</li>
 </ul>
 </li>
-<li><strong>Finished</strong>: campaigns whose watch-time drops are all earned move from the other columns to the <strong>Finished</strong> column on the right. Its filter narrows the list, and <strong>Clear all</strong> (or <strong>Clear N shown</strong> while filtering) removes the shown ones from it. When nothing is finished, the column folds into a thin strip and All campaigns gets two cards per row again.</li>
+<li><strong>Finished</strong>: campaigns whose watch-time drops are all earned move from the other columns to the <strong>Finished</strong> column on the right. Its filter narrows the list, and <strong>Clear all</strong> (or <strong>Clear N shown</strong> while filtering) removes the shown ones from it. When nothing is finished, the column folds into a thin strip and All campaigns gets its width.</li>
 <li><strong>Folding columns</strong>: My searches and Finished fold into a narrow strip in their place when they have nothing to show (My searches: no campaign matches a saved search). The <strong>‹</strong>/<strong>›</strong> button in the column header folds a column by hand, and clicking the strip opens it again. A manual choice holds until the column gets its first campaign or loses its last one.</li>
 <li><strong>Hide campaigns without a free reward</strong> (checkbox in the sidebar): hides campaigns where every reward needs a sub, a gifted sub or another payment. A campaign with at least one reward you get just by watching stays visible.</li>
 <li><strong>Hide game</strong>: hides every current and future campaign of that game the same way, until you unhide it. Hidden games are listed first under <strong>Hidden campaigns</strong> in the sidebar.</li>
