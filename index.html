@@ -39,7 +39,7 @@
       <img src="icon-96.png" alt="">
       <div>
         <h1>TDT</h1>
-        <p class="version">Version 1.5.18 · Firefox add-on</p>
+        <p class="version">Version 1.5.19 · Firefox add-on</p>
       </div>
     </header>
 
@@ -58,15 +58,27 @@
     <h2>If that doesn't work</h2>
     <p>Right-click the button, choose <strong>Save Link As…</strong>, then drag the saved file onto a Firefox window, or use <code>about:addons</code> → gear icon → <strong>Install Add-on From File…</strong>.</p>
 
-    <h2>What's new in 1.5.18</h2>
+    <h2>What's new in 1.5.19</h2>
     <ul>
-<li>When a campaign only counts on some channels, the <strong>N channels</strong> button in the full view opens a list of those that are live with the game right now, with viewers and stream title, most viewers first. Click one to start watching. <strong>Category ↗</strong> still opens the game&#39;s live channels with drops.</li>
-<li>The live check uses one more Twitch query. Like the others, TDT picks up its current version from twitch.tv channel pages you open, and it can be set under Settings → Advanced.</li>
+<li>Cards in <strong>My campaigns</strong> are greyed out with &quot;No channel live right now&quot; when none of the channels the campaign counts on is live with the game, or, for campaigns open to any channel, no stream with drops is live in the category. This is checked with every regular check. A campaign that is progressing is never greyed out.</li>
+<li>New checkbox <strong>Hide campaigns without live channels</strong> above My campaigns. The header counts the hidden cards.</li>
+<li>The check for campaigns open to any channel uses one more Twitch query. Like the others, TDT picks up its current version from twitch.tv category pages you open, and it can be set under Settings → Advanced.</li>
+<li><strong>Progressing</strong> follows a switch to another game sooner:<ul>
+<li>A campaign that shows up with minutes for the first time, for example one that only started since the last check, counts as the one being watched. Before, it only got a starting point, and the campaign you switched from kept the label for another check.</li>
+<li>A check less than 4 minutes after the previous one also moves the label when a campaign of another game gained minutes.</li>
+</ul>
+</li>
 </ul>
 
     <details>
       <summary>Earlier versions</summary>
-      <h3>1.5.17</h3>
+      <h3>1.5.18</h3>
+<ul>
+<li>When a campaign only counts on some channels, the <strong>N channels</strong> button in the full view opens a list of those that are live with the game right now, with viewers and stream title, most viewers first. Click one to start watching. <strong>Category ↗</strong> still opens the game&#39;s live channels with drops.</li>
+<li>The live check uses one more Twitch query. Like the others, TDT picks up its current version from twitch.tv channel pages you open, and it can be set under Settings → Advanced.</li>
+</ul>
+
+<h3>1.5.17</h3>
 <ul>
 <li>The <strong>My progress</strong> column is now called <strong>My campaigns</strong>, in the full view and the toolbar popup.</li>
 <li>In the full view&#39;s sidebar, <strong>Hidden campaigns</strong> is called <strong>Hidden</strong> again.</li>
@@ -203,7 +215,7 @@
 <li><strong>Ready to claim</strong> lists finished drops; <strong>Claim</strong> opens the inventory page.</li>
 <li>The badge shows the number of claimable drops (red <code>!</code> means the last check failed; open the popup to see why).</li>
 <li><strong>Full view</strong>: the ⤢ button in the popup opens a full-width page in a tab. It shows every active campaign as a card in columns: My campaigns, My searches, All campaigns and Finished. Each column scrolls on its own and has its own live filter (all typed words must appear in the game, campaign or publisher name):<ul>
-<li><strong>My campaigns</strong>: campaigns for your starred games, one per row like a queue. Campaigns that progressed at the last check come first, the rest are sorted by end date. Starred games without any campaign stay greyed out at the bottom and come back as soon as a new campaign starts. Finished campaigns move to the Finished column instead.</li>
+<li><strong>My campaigns</strong>: campaigns for your starred games, one per row like a queue. Campaigns that progressed at the last check come first, the rest are sorted by end date. Starred games without any campaign stay greyed out at the bottom and come back as soon as a new campaign starts. Finished campaigns move to the Finished column instead. With each check TDT also looks whether the campaign can progress anywhere right now: if none of the channels it counts on is live with the game (or, for campaigns open to any channel, no stream with drops is live in the category), its card is greyed out with &quot;No channel live right now&quot;. A campaign that is progressing is never greyed out. <strong>Hide campaigns without live channels</strong> above the column hides those cards.</li>
 <li><strong>My searches</strong>: campaigns matching your saved searches. A campaign matches when it contains all words of the search. An exact game name ranks highest, then the whole phrase, then the words scattered. Remove a saved search with its ×.</li>
 <li><strong>All campaigns</strong>: everything else (one card per row, plus up to one more for each folded column: My searches, Finished). <strong>Save search</strong> stores the current filter as a saved search, and its matches move to My searches.</li>
 <li><strong>New</strong> campaigns get a green NEW badge: in My campaigns and All campaigns when they first appear on Twitch, in My searches when a campaign starts matching a saved search. The badge goes away 2 seconds after the mouse leaves the card. The column header counts them, <strong>New only</strong> (My searches and All campaigns) shows just those, and <strong>Sort</strong> can put the newest first. Campaigns that already match when you save a search aren&#39;t marked as new. You also get a notification for new matches (can be turned off in Settings).</li>
