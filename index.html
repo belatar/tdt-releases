@@ -39,7 +39,7 @@
       <img src="icon-96.png" alt="">
       <div>
         <h1>TDT</h1>
-        <p class="version">Version 1.5.17 · Firefox add-on</p>
+        <p class="version">Version 1.5.18 · Firefox add-on</p>
       </div>
     </header>
 
@@ -58,16 +58,22 @@
     <h2>If that doesn't work</h2>
     <p>Right-click the button, choose <strong>Save Link As…</strong>, then drag the saved file onto a Firefox window, or use <code>about:addons</code> → gear icon → <strong>Install Add-on From File…</strong>.</p>
 
-    <h2>What's new in 1.5.17</h2>
+    <h2>What's new in 1.5.18</h2>
     <ul>
+<li>When a campaign only counts on some channels, the <strong>N channels</strong> button in the full view opens a list of those that are live with the game right now, with viewers and stream title, most viewers first. Click one to start watching. <strong>Category ↗</strong> still opens the game&#39;s live channels with drops.</li>
+<li>The live check uses one more Twitch query. Like the others, TDT picks up its current version from twitch.tv channel pages you open, and it can be set under Settings → Advanced.</li>
+</ul>
+
+    <details>
+      <summary>Earlier versions</summary>
+      <h3>1.5.17</h3>
+<ul>
 <li>The <strong>My progress</strong> column is now called <strong>My campaigns</strong>, in the full view and the toolbar popup.</li>
 <li>In the full view&#39;s sidebar, <strong>Hidden campaigns</strong> is called <strong>Hidden</strong> again.</li>
 <li>In Settings, the list of starred games is headed <strong>My games</strong>, like in the full view&#39;s sidebar.</li>
 </ul>
 
-    <details>
-      <summary>Earlier versions</summary>
-      <h3>1.5.16</h3>
+<h3>1.5.16</h3>
 <ul>
 <li>The green NEW mark stays while you look at a card. It clears 2 seconds after the mouse leaves the card, and coming back within those 2 seconds keeps it.</li>
 <li>The confirmation for <strong>Clear all</strong> in Finished is a dialog in the same glassy, curved style as the cards, instead of the browser&#39;s plain box.</li>
@@ -208,10 +214,10 @@
 <li><strong>Hide campaigns without a free reward</strong> (checkbox in the sidebar): hides campaigns where every reward needs a sub, a gifted sub or another payment. A campaign with at least one reward you get just by watching stays visible.</li>
 <li><strong>Hide game</strong>: hides every current and future campaign of that game the same way, until you unhide it. Hidden games are listed first under <strong>Hidden</strong> in the sidebar.</li>
 <li><strong>Hide</strong>: the Hide button on a card removes that campaign from all columns and the toolbar popup, and stops its &quot;new match&quot;, &quot;ending soon&quot; and &quot;progress stopped&quot; alerts. Drops ready to claim are still shown. Hidden campaigns are listed under <strong>Hidden</strong> at the bottom of the sidebar (click to expand), with a filter and an <strong>Unhide</strong> button. They&#39;re forgotten once the campaign ends.</li>
-<li>Each card shows the rewards, your progress, and a channels button next to the campaign name. It opens the game&#39;s live channels with drops enabled on Twitch in a new tab and switches to it, so you can pick a stream there:<ul>
+<li>Each card shows the rewards, your progress, and a channels button next to the campaign name. Channels open in a new tab next to the current one:<ul>
 <li><strong>▶ channel name</strong>: the campaign only counts on that one channel, and the button opens it directly.</li>
-<li><strong>N channels</strong>: the campaign only counts on specific channels. Hover the button to see their names.</li>
-<li><strong>Live channels</strong>: any channel with drops enabled counts.</li>
+<li><strong>N channels</strong>: the campaign only counts on specific channels. In the full view the button opens a list of those that are live with the game right now, most viewers first. Click one to start watching. <strong>Category ↗</strong> opens the game&#39;s live channels with drops instead. In the toolbar popup the button opens the category.</li>
+<li><strong>Live channels</strong>: any channel with drops enabled counts, and the button opens the game&#39;s live channels with drops on Twitch.</li>
 </ul>
 </li>
 <li>Starred games stay in <strong>My campaigns</strong> even when they have no campaign. Such games show as &quot;waiting&quot;, and you get an alert as soon as a new campaign starts. Use &quot;Track another game&quot; in the full view to star a game that currently has no campaign (any game that had a campaign since you installed the extension).</li>
