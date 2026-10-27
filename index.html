@@ -39,7 +39,7 @@
       <img src="icon-96.png" alt="">
       <div>
         <h1>TDT</h1>
-        <p class="version">Version 1.6.0 · Firefox add-on</p>
+        <p class="version">Version 1.6.1 · Firefox add-on</p>
       </div>
     </header>
 
@@ -58,8 +58,23 @@
     <h2>If that doesn't work</h2>
     <p>Right-click the button, choose <strong>Save Link As…</strong>, then drag the saved file onto a Firefox window, or use <code>about:addons</code> → gear icon → <strong>Install Add-on From File…</strong>.</p>
 
-    <h2>What's new in 1.6.0</h2>
+    <h2>What's new in 1.6.1</h2>
     <ul>
+<li><p>The mini window has a narrow layout, switched with <strong>⇆</strong> and remembered. It&#39;s only as wide as the game&#39;s box art. Below the box art:</p>
+<ul>
+<li>a vertical bar fills upwards for the reward with the least watch time left, and moves on to the next reward once that one is earned;</li>
+<li>the percentage;</li>
+<li>⇆ and ⤢ (full view);</li>
+<li>the time of the last check.</li>
+</ul>
+<p>Hovering the box art or the bar shows the game, the campaign, the reward and its minutes.</p>
+</li>
+</ul>
+
+    <details>
+      <summary>Earlier versions</summary>
+      <h3>1.6.0</h3>
+<ul>
 <li><p>New <strong>mini window</strong> (⧉ in the full view and the toolbar popup): a small window with just the campaign that matters now:</p>
 <ul>
 <li>the one progressing;</li>
@@ -72,9 +87,7 @@
 </li>
 </ul>
 
-    <details>
-      <summary>Earlier versions</summary>
-      <h3>1.5.23</h3>
+<h3>1.5.23</h3>
 <ul>
 <li>My searches and All campaigns fold into their strip whenever they show no card, also when <strong>New only</strong> hides everything. The strip then reads, for example, &quot;All campaigns (0 new)&quot;. A column never folds while you type in its filter.</li>
 <li>The <strong>New</strong> toggle reads <strong>New only</strong> again.</li>
@@ -277,7 +290,7 @@
 <li><strong>Finished</strong>: campaigns whose watch-time drops are all earned move from the other columns to the <strong>Finished</strong> column on the right. Its filter narrows the list, and <strong>Clear all</strong> (or <strong>Clear N shown</strong> while filtering) removes the shown ones from it. When nothing is finished, the column folds into a thin strip.</li>
 <li><strong>Folding columns</strong>: My searches and Finished fold into a narrow strip in their place when they have nothing to show (My searches: no campaign matches a saved search). The <strong>‹</strong>/<strong>›</strong> button in the column header folds a column by hand, and clicking the strip opens it again. A manual choice holds until the column gets its first campaign or loses its last one.</li>
 <li><strong>Hide campaigns without a free reward</strong> (checkbox in the sidebar): hides campaigns where every reward needs a sub, a gifted sub or another payment. A campaign with at least one reward you get just by watching stays visible.</li>
-<li><strong>Mini window</strong>: ⧉ in the full view or the toolbar popup opens a small window with only the campaign that matters now: the one progressing, otherwise the first one in My campaigns, otherwise a note that the pipeline is empty. It&#39;s sized to the card, updates on its own and has a <strong>Full view</strong> button. Firefox shows a read-only address line at its top, which add-ons can&#39;t remove.</li>
+<li><strong>Mini window</strong>: ⧉ in the full view or the toolbar popup opens a small window with only the campaign that matters now: the one progressing, otherwise the first one in My campaigns, otherwise a note that the pipeline is empty. It&#39;s sized to the card, updates on its own and has a <strong>Full view</strong> button. <strong>⇆</strong> switches to a narrow layout that&#39;s only as wide as the game&#39;s box art: below it a vertical bar for the reward with the least watch time left (it moves on to the next one once that&#39;s earned), the percentage, the buttons and the time of the last check. Firefox shows a read-only address line at its top, which add-ons can&#39;t remove.</li>
 <li><strong>Hide game</strong>: hides every current and future campaign of that game the same way, until you unhide it. Hidden games are listed first under <strong>Hidden</strong> in the sidebar.</li>
 <li><strong>Hide</strong>: the Hide button on a card removes that campaign from all columns and the toolbar popup, and stops its &quot;new match&quot;, &quot;ending soon&quot; and &quot;progress stopped&quot; alerts. Drops ready to claim are still shown. Hidden campaigns are listed under <strong>Hidden</strong> at the bottom of the sidebar (click to expand), with a filter and an <strong>Unhide</strong> button. They&#39;re forgotten once the campaign ends.</li>
 <li>Each card shows the rewards, your progress, and a channels button next to the campaign name. Channels open in a new tab next to the current one:<ul>
