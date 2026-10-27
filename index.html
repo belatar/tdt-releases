@@ -39,7 +39,7 @@
       <img src="icon-96.png" alt="">
       <div>
         <h1>TDT</h1>
-        <p class="version">Version 1.5.20 · Firefox add-on</p>
+        <p class="version">Version 1.5.21 · Firefox add-on</p>
       </div>
     </header>
 
@@ -58,16 +58,21 @@
     <h2>If that doesn't work</h2>
     <p>Right-click the button, choose <strong>Save Link As…</strong>, then drag the saved file onto a Firefox window, or use <code>about:addons</code> → gear icon → <strong>Install Add-on From File…</strong>.</p>
 
-    <h2>What's new in 1.5.20</h2>
+    <h2>What's new in 1.5.21</h2>
     <ul>
+<li>The live channels list behind <strong>N channels</strong> opens faster for campaigns with many channels. It checks the channels 20 at a time, starting with those live at the last check, and stops once the list is full. Scrolling down checks the next ones. The line under the title shows how many channels have been checked so far.</li>
+</ul>
+
+    <details>
+      <summary>Earlier versions</summary>
+      <h3>1.5.20</h3>
+<ul>
 <li>When Twitch&#39;s servers don&#39;t answer in time (&quot;service timeout&quot;), TDT tries again a few seconds later before showing an error. If that fails too, the message says so once, in plain words, and that the next check tries again.</li>
 <li>Error messages no longer end in &quot;null&quot;.</li>
 <li>The live check for <strong>My campaigns</strong> stops at the first live channel, starting with the ones live at the last check. A campaign that counts on hundreds of channels usually needs one Twitch request instead of one per 20 channels. A full sweep only happens when none of them is live.</li>
 </ul>
 
-    <details>
-      <summary>Earlier versions</summary>
-      <h3>1.5.19</h3>
+<h3>1.5.19</h3>
 <ul>
 <li>Cards in <strong>My campaigns</strong> are greyed out with &quot;No channel live right now&quot; when none of the channels the campaign counts on is live with the game, or, for campaigns open to any channel, no stream with drops is live in the category. This is checked with every regular check. A campaign that is progressing is never greyed out.</li>
 <li>New checkbox <strong>Hide campaigns without live channels</strong> above My campaigns. The header counts the hidden cards.</li>
@@ -235,7 +240,7 @@
 <li><strong>Hide</strong>: the Hide button on a card removes that campaign from all columns and the toolbar popup, and stops its &quot;new match&quot;, &quot;ending soon&quot; and &quot;progress stopped&quot; alerts. Drops ready to claim are still shown. Hidden campaigns are listed under <strong>Hidden</strong> at the bottom of the sidebar (click to expand), with a filter and an <strong>Unhide</strong> button. They&#39;re forgotten once the campaign ends.</li>
 <li>Each card shows the rewards, your progress, and a channels button next to the campaign name. Channels open in a new tab next to the current one:<ul>
 <li><strong>▶ channel name</strong>: the campaign only counts on that one channel, and the button opens it directly.</li>
-<li><strong>N channels</strong>: the campaign only counts on specific channels. In the full view the button opens a list of those that are live with the game right now, most viewers first. Click one to start watching. <strong>Category ↗</strong> opens the game&#39;s live channels with drops instead. In the toolbar popup the button opens the category.</li>
+<li><strong>N channels</strong>: the campaign only counts on specific channels. In the full view the button opens a list of those that are live with the game right now. It checks only as many channels as fill the list, starting with those live at the last check, and checks more as you scroll down. Click one to start watching. <strong>Category ↗</strong> opens the game&#39;s live channels with drops instead. In the toolbar popup the button opens the category.</li>
 <li><strong>Live channels</strong>: any channel with drops enabled counts, and the button opens the game&#39;s live channels with drops on Twitch.</li>
 </ul>
 </li>
