@@ -39,7 +39,7 @@
       <img src="icon-96.png" alt="">
       <div>
         <h1>TDT</h1>
-        <p class="version">Version 1.5.21 · Firefox add-on</p>
+        <p class="version">Version 1.5.22 · Firefox add-on</p>
       </div>
     </header>
 
@@ -58,14 +58,32 @@
     <h2>If that doesn't work</h2>
     <p>Right-click the button, choose <strong>Save Link As…</strong>, then drag the saved file onto a Firefox window, or use <code>about:addons</code> → gear icon → <strong>Install Add-on From File…</strong>.</p>
 
-    <h2>What's new in 1.5.21</h2>
+    <h2>What's new in 1.5.22</h2>
     <ul>
-<li>The live channels list behind <strong>N channels</strong> opens faster for campaigns with many channels. It checks the channels 20 at a time, starting with those live at the last check, and stops once the list is full. Scrolling down checks the next ones. The line under the title shows how many channels have been checked so far.</li>
+<li>Column headers line up: title and count on the left, the column&#39;s options on the right, the filter box below. The cards of all columns start at the same height.<ul>
+<li><strong>Hide campaigns without live channels</strong> is now the <strong>Live only</strong> toggle in the My campaigns header.</li>
+<li><strong>New only</strong> is the <strong>New</strong> toggle, and the sort menu (Match, Ending, Newest) sits next to it in the headers of My searches and All campaigns.</li>
+<li>Saved-search chips sit at the top of the My searches list.</li>
+</ul>
+</li>
+<li>My campaigns only shows campaigns. Starred games without a campaign no longer get a &quot;Waiting for a new campaign&quot; tile there. They&#39;re listed as &quot;waiting&quot; under My games in the sidebar.</li>
+<li>New rule for the column widths:<ul>
+<li>My campaigns is always open and fills the whole width when it&#39;s alone.</li>
+<li>Next to only My searches or only All campaigns, the two share evenly.</li>
+<li>Otherwise My campaigns and Finished get one column each, and My searches and All campaigns share the rest, All campaigns taking the larger half.</li>
+<li>All campaigns can now fold too, and wide columns show several cards per row.</li>
+</ul>
+</li>
 </ul>
 
     <details>
       <summary>Earlier versions</summary>
-      <h3>1.5.20</h3>
+      <h3>1.5.21</h3>
+<ul>
+<li>The live channels list behind <strong>N channels</strong> opens faster for campaigns with many channels. It checks the channels 20 at a time, starting with those live at the last check, and stops once the list is full. Scrolling down checks the next ones. The line under the title shows how many channels have been checked so far.</li>
+</ul>
+
+<h3>1.5.20</h3>
 <ul>
 <li>When Twitch&#39;s servers don&#39;t answer in time (&quot;service timeout&quot;), TDT tries again a few seconds later before showing an error. If that fails too, the message says so once, in plain words, and that the next check tries again.</li>
 <li>Error messages no longer end in &quot;null&quot;.</li>
@@ -227,13 +245,14 @@
 <li><strong>Ready to claim</strong> lists finished drops; <strong>Claim</strong> opens the inventory page.</li>
 <li>The badge shows the number of claimable drops (red <code>!</code> means the last check failed; open the popup to see why).</li>
 <li><strong>Full view</strong>: the ⤢ button in the popup opens a full-width page in a tab. It shows every active campaign as a card in columns: My campaigns, My searches, All campaigns and Finished. Each column scrolls on its own and has its own live filter (all typed words must appear in the game, campaign or publisher name):<ul>
-<li><strong>My campaigns</strong>: campaigns for your starred games, one per row like a queue. Campaigns that progressed at the last check come first, the rest are sorted by end date. Starred games without any campaign stay greyed out at the bottom and come back as soon as a new campaign starts. Finished campaigns move to the Finished column instead. With each check TDT also looks whether the campaign can progress anywhere right now: if none of the channels it counts on is live with the game (or, for campaigns open to any channel, no stream with drops is live in the category), its card is greyed out with &quot;No channel live right now&quot;. A campaign that is progressing is never greyed out. <strong>Hide campaigns without live channels</strong> above the column hides those cards.</li>
+<li><strong>My campaigns</strong>: campaigns for your starred games, one per row like a queue. Campaigns that progressed at the last check come first, the rest are sorted by end date. Finished campaigns move to the Finished column instead. With each check TDT also looks whether the campaign can progress anywhere right now: if none of the channels it counts on is live with the game (or, for campaigns open to any channel, no stream with drops is live in the category), its card is greyed out with &quot;No channel live right now&quot;. A campaign that is progressing is never greyed out. <strong>Live only</strong> in the column header hides those cards.</li>
 <li><strong>My searches</strong>: campaigns matching your saved searches. A campaign matches when it contains all words of the search. An exact game name ranks highest, then the whole phrase, then the words scattered. Remove a saved search with its ×.</li>
-<li><strong>All campaigns</strong>: everything else (one card per row, plus up to one more for each folded column: My searches, Finished). <strong>Save search</strong> stores the current filter as a saved search, and its matches move to My searches.</li>
-<li><strong>New</strong> campaigns get a green NEW badge: in My campaigns and All campaigns when they first appear on Twitch, in My searches when a campaign starts matching a saved search. The badge goes away 2 seconds after the mouse leaves the card. The column header counts them, <strong>New only</strong> (My searches and All campaigns) shows just those, and <strong>Sort</strong> can put the newest first. Campaigns that already match when you save a search aren&#39;t marked as new. You also get a notification for new matches (can be turned off in Settings).</li>
+<li><strong>All campaigns</strong>: everything else. <strong>Save search</strong> stores the current filter as a saved search, and its matches move to My searches.</li>
+<li><strong>Column widths</strong>: My searches, All campaigns and Finished fold into a thin strip while they have nothing to show (or when you fold them with ‹/›), and the open columns share the space. My campaigns is always open and fills everything when it&#39;s alone. With just one other column besides Finished, the two share the width evenly. With more open, My campaigns and Finished get one column each and My searches and All campaigns share the rest, All campaigns taking the larger half. A wider column shows several cards per row.</li>
+<li><strong>New</strong> campaigns get a green NEW badge: in My campaigns and All campaigns when they first appear on Twitch, in My searches when a campaign starts matching a saved search. The badge goes away 2 seconds after the mouse leaves the card. The column header counts them, <strong>New</strong> in the header of My searches and All campaigns shows just those, and the sort menu next to it can put the newest first. Campaigns that already match when you save a search aren&#39;t marked as new. You also get a notification for new matches (can be turned off in Settings).</li>
 </ul>
 </li>
-<li><strong>Finished</strong>: campaigns whose watch-time drops are all earned move from the other columns to the <strong>Finished</strong> column on the right. Its filter narrows the list, and <strong>Clear all</strong> (or <strong>Clear N shown</strong> while filtering) removes the shown ones from it. When nothing is finished, the column folds into a thin strip and All campaigns gets its width.</li>
+<li><strong>Finished</strong>: campaigns whose watch-time drops are all earned move from the other columns to the <strong>Finished</strong> column on the right. Its filter narrows the list, and <strong>Clear all</strong> (or <strong>Clear N shown</strong> while filtering) removes the shown ones from it. When nothing is finished, the column folds into a thin strip.</li>
 <li><strong>Folding columns</strong>: My searches and Finished fold into a narrow strip in their place when they have nothing to show (My searches: no campaign matches a saved search). The <strong>‹</strong>/<strong>›</strong> button in the column header folds a column by hand, and clicking the strip opens it again. A manual choice holds until the column gets its first campaign or loses its last one.</li>
 <li><strong>Hide campaigns without a free reward</strong> (checkbox in the sidebar): hides campaigns where every reward needs a sub, a gifted sub or another payment. A campaign with at least one reward you get just by watching stays visible.</li>
 <li><strong>Hide game</strong>: hides every current and future campaign of that game the same way, until you unhide it. Hidden games are listed first under <strong>Hidden</strong> in the sidebar.</li>
@@ -244,7 +263,7 @@
 <li><strong>Live channels</strong>: any channel with drops enabled counts, and the button opens the game&#39;s live channels with drops on Twitch.</li>
 </ul>
 </li>
-<li>Starred games stay in <strong>My campaigns</strong> even when they have no campaign. Such games show as &quot;waiting&quot;, and you get an alert as soon as a new campaign starts. Use &quot;Track another game&quot; in the full view to star a game that currently has no campaign (any game that had a campaign since you installed the extension).</li>
+<li>Starred games stay under <strong>My games</strong> in the sidebar even when they have no campaign. Such games show as &quot;waiting&quot; there, and you get an alert as soon as a new campaign starts. Use &quot;Track another game&quot; in the full view to star a game that currently has no campaign (any game that had a campaign since you installed the extension).</li>
 <li><strong>Progress stopped</strong>: if a campaign progressed at the last check and no campaign has progressed at the next one, while that campaign isn&#39;t finished yet, its card shows a red warning and you get a notification (click it to jump to the card). That usually means the stream went offline or stopped counting, so switch to another one. Switching to a stream for a different campaign doesn&#39;t trigger it, since Twitch only advances one campaign at a time. Only one card shows the warning at a time. It disappears as soon as any campaign progresses, or when you press <strong>Dismiss</strong>. After a long break (browser closed, PC off), tracking starts fresh, and labels from an old check aren&#39;t shown.</li>
 <li><strong>Troubleshooting</strong> (bottom of Settings): <strong>Reset progress tracking</strong> clears a stuck &quot;Progress stopped&quot; warning and starts the tracking over. <strong>Copy debug info</strong> copies what the extension has stored about progress, plus what Twitch currently reports about your drops in progress and rewards received (names, ids and times only, no login or Twitch tokens), to paste into a bug report. The full view&#39;s sidebar shows the version, and warns if Firefox is still running an older background script after an update.</li>
 <li>Settings (gear icon): check interval, ending-soon threshold, the hidden helper tab, which notifications to show, and hiding expired rows.</li>
