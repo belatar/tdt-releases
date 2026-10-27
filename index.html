@@ -39,7 +39,7 @@
       <img src="icon-96.png" alt="">
       <div>
         <h1>TDT</h1>
-        <p class="version">Version 1.5.22 · Firefox add-on</p>
+        <p class="version">Version 1.5.23 · Firefox add-on</p>
       </div>
     </header>
 
@@ -58,8 +58,18 @@
     <h2>If that doesn't work</h2>
     <p>Right-click the button, choose <strong>Save Link As…</strong>, then drag the saved file onto a Firefox window, or use <code>about:addons</code> → gear icon → <strong>Install Add-on From File…</strong>.</p>
 
-    <h2>What's new in 1.5.22</h2>
+    <h2>What's new in 1.5.23</h2>
     <ul>
+<li>My searches and All campaigns fold into their strip whenever they show no card, also when <strong>New only</strong> hides everything. The strip then reads, for example, &quot;All campaigns (0 new)&quot;. A column never folds while you type in its filter.</li>
+<li>The <strong>New</strong> toggle reads <strong>New only</strong> again.</li>
+<li>The sort menu has a ⇅ icon and is exactly as wide as <strong>Save search</strong> below it. <strong>New only</strong> ends at the right edge of the filter box.</li>
+<li>The collapse arrows of My searches and All campaigns sit next to the column title.</li>
+</ul>
+
+    <details>
+      <summary>Earlier versions</summary>
+      <h3>1.5.22</h3>
+<ul>
 <li>Column headers line up: title and count on the left, the column&#39;s options on the right, the filter box below. The cards of all columns start at the same height.<ul>
 <li><strong>Hide campaigns without live channels</strong> is now the <strong>Live only</strong> toggle in the My campaigns header.</li>
 <li><strong>New only</strong> is the <strong>New</strong> toggle, and the sort menu (Match, Ending, Newest) sits next to it in the headers of My searches and All campaigns.</li>
@@ -76,9 +86,7 @@
 </li>
 </ul>
 
-    <details>
-      <summary>Earlier versions</summary>
-      <h3>1.5.21</h3>
+<h3>1.5.21</h3>
 <ul>
 <li>The live channels list behind <strong>N channels</strong> opens faster for campaigns with many channels. It checks the channels 20 at a time, starting with those live at the last check, and stops once the list is full. Scrolling down checks the next ones. The line under the title shows how many channels have been checked so far.</li>
 </ul>
@@ -248,8 +256,8 @@
 <li><strong>My campaigns</strong>: campaigns for your starred games, one per row like a queue. Campaigns that progressed at the last check come first, the rest are sorted by end date. Finished campaigns move to the Finished column instead. With each check TDT also looks whether the campaign can progress anywhere right now: if none of the channels it counts on is live with the game (or, for campaigns open to any channel, no stream with drops is live in the category), its card is greyed out with &quot;No channel live right now&quot;. A campaign that is progressing is never greyed out. <strong>Live only</strong> in the column header hides those cards.</li>
 <li><strong>My searches</strong>: campaigns matching your saved searches. A campaign matches when it contains all words of the search. An exact game name ranks highest, then the whole phrase, then the words scattered. Remove a saved search with its ×.</li>
 <li><strong>All campaigns</strong>: everything else. <strong>Save search</strong> stores the current filter as a saved search, and its matches move to My searches.</li>
-<li><strong>Column widths</strong>: My searches, All campaigns and Finished fold into a thin strip while they have nothing to show (or when you fold them with ‹/›), and the open columns share the space. My campaigns is always open and fills everything when it&#39;s alone. With just one other column besides Finished, the two share the width evenly. With more open, My campaigns and Finished get one column each and My searches and All campaigns share the rest, All campaigns taking the larger half. A wider column shows several cards per row.</li>
-<li><strong>New</strong> campaigns get a green NEW badge: in My campaigns and All campaigns when they first appear on Twitch, in My searches when a campaign starts matching a saved search. The badge goes away 2 seconds after the mouse leaves the card. The column header counts them, <strong>New</strong> in the header of My searches and All campaigns shows just those, and the sort menu next to it can put the newest first. Campaigns that already match when you save a search aren&#39;t marked as new. You also get a notification for new matches (can be turned off in Settings).</li>
+<li><strong>Column widths</strong>: My searches and All campaigns fold into a thin strip while they show no card (also when <strong>New only</strong> hides everything, but not while you type in their filter), Finished while nothing is finished. Each of them can also be folded with its ‹ or › and opened by clicking the strip. The open columns share the space. My campaigns is always open and fills everything when it&#39;s alone. With just one other column besides Finished, the two share the width evenly. With more open, My campaigns and Finished get one column each and My searches and All campaigns share the rest, All campaigns taking the larger half. A wider column shows several cards per row.</li>
+<li><strong>New</strong> campaigns get a green NEW badge: in My campaigns and All campaigns when they first appear on Twitch, in My searches when a campaign starts matching a saved search. The badge goes away 2 seconds after the mouse leaves the card. The column header counts them, <strong>New only</strong> in the header of My searches and All campaigns shows just those, and the sort menu (⇅) next to it can put the newest first. Campaigns that already match when you save a search aren&#39;t marked as new. You also get a notification for new matches (can be turned off in Settings).</li>
 </ul>
 </li>
 <li><strong>Finished</strong>: campaigns whose watch-time drops are all earned move from the other columns to the <strong>Finished</strong> column on the right. Its filter narrows the list, and <strong>Clear all</strong> (or <strong>Clear N shown</strong> while filtering) removes the shown ones from it. When nothing is finished, the column folds into a thin strip.</li>
