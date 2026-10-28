@@ -39,7 +39,7 @@
       <img src="icon-96.png" alt="">
       <div>
         <h1>TDT</h1>
-        <p class="version">Version 1.6.7 · Firefox add-on</p>
+        <p class="version">Version 1.6.8 · Firefox add-on</p>
       </div>
     </header>
 
@@ -58,14 +58,19 @@
     <h2>If that doesn't work</h2>
     <p>Right-click the button, choose <strong>Save Link As…</strong>, then drag the saved file onto a Firefox window, or use <code>about:addons</code> → gear icon → <strong>Install Add-on From File…</strong>.</p>
 
-    <h2>What's new in 1.6.7</h2>
+    <h2>What's new in 1.6.8</h2>
     <ul>
-<li>Narrow mini window: make it taller and the progress bar gets longer. The box art stays at the top, the buttons and time at the bottom. The window keeps its height for the next time.</li>
+<li><strong>Campaign finished alert</strong>: when the campaign you were progressing finishes and nothing else progresses, a blinking alert covers the full view and the mini window (wide and narrow). It names the next campaign in My campaigns, with its channels button. You also get a notification and a short sound. <strong>OK</strong> closes the alert, and it also goes away once a campaign progresses again. Both can be switched off in Settings, which also has a <strong>Test sound</strong> button.</li>
 </ul>
 
     <details>
       <summary>Earlier versions</summary>
-      <h3>1.6.6</h3>
+      <h3>1.6.7</h3>
+<ul>
+<li>Narrow mini window: make it taller and the progress bar gets longer. The box art stays at the top, the buttons and time at the bottom. The window keeps its height for the next time.</li>
+</ul>
+
+<h3>1.6.6</h3>
 <ul>
 <li><p>The toolbar popup&#39;s <strong>My campaigns</strong> matches the full view:</p>
 <ul>
@@ -342,6 +347,7 @@
 </li>
 <li>Starred games stay under <strong>My games</strong> in the sidebar even when they have no campaign. Such games show as &quot;waiting&quot; there, and you get an alert as soon as a new campaign starts. Use &quot;Track another game&quot; in the full view to star a game that currently has no campaign (any game that had a campaign since you installed the extension).</li>
 <li><strong>Progress stopped</strong>: if a campaign progressed at the last check and no campaign has progressed at the next one, while that campaign isn&#39;t finished yet, its card shows a red warning and you get a notification (click it to jump to the card). That usually means the stream went offline or stopped counting, so switch to another one. Switching to a stream for a different campaign doesn&#39;t trigger it, since Twitch only advances one campaign at a time. Only one card shows the warning at a time. It disappears as soon as any campaign progresses, or when you press <strong>Dismiss</strong>. After a long break (browser closed, PC off), tracking starts fresh, and labels from an old check aren&#39;t shown.</li>
+<li><strong>Campaign finished</strong>: if the campaign that was progressing finishes and nothing else progresses, a blinking alert covers the full view and the mini window, with a notification and a short sound. It names the next campaign in My campaigns and has its channels button, plus <strong>Claim rewards</strong> if there is something to claim. If another campaign of the same game might go on with the same stream, it waits for the next check first. <strong>OK</strong> closes it, and it also goes away as soon as any campaign progresses. Settings can turn the alert and the sound off, and <strong>Test sound</strong> plays it.</li>
 <li><strong>Troubleshooting</strong> (bottom of Settings): <strong>Reset progress tracking</strong> clears a stuck &quot;Progress stopped&quot; warning and starts the tracking over. <strong>Copy debug info</strong> copies what the extension has stored about progress, plus what Twitch currently reports about your drops in progress and rewards received (names, ids and times only, no login or Twitch tokens), to paste into a bug report. The full view&#39;s sidebar shows the version, and warns if Firefox is still running an older background script after an update.</li>
 <li>Settings (gear icon): check interval, ending-soon threshold, the hidden helper tab, which notifications to show, and hiding expired rows.</li>
 <li><strong>Hidden helper tab</strong>: Twitch only accepts the extension&#39;s checks with a fresh security check from its website. When no twitch.tv tab is open, a check briefly opens twitch.tv in a hidden, muted tab, sends its requests from there and closes it again. Firefox may tell you once that an extension is hiding tabs. An open twitch.tv tab of your own is used instead when there is one. You can turn this off in Settings.</li>
