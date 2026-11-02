@@ -39,7 +39,7 @@
       <img src="icon-96.png" alt="">
       <div>
         <h1>TDT</h1>
-        <p class="version">Version 1.6.11 · Firefox add-on</p>
+        <p class="version">Version 1.6.12 · Firefox add-on</p>
       </div>
     </header>
 
@@ -58,15 +58,23 @@
     <h2>If that doesn't work</h2>
     <p>Right-click the button, choose <strong>Save Link As…</strong>, then drag the saved file onto a Firefox window, or use <code>about:addons</code> → gear icon → <strong>Install Add-on From File…</strong>.</p>
 
-    <h2>What's new in 1.6.11</h2>
+    <h2>What's new in 1.6.12</h2>
     <ul>
-<li><strong>Reward time windows</strong>: Twitch can let each reward of a campaign count only at certain times (e.g. one per match day, as with Overwatch&#39;s OWCS). Rewards whose window hasn&#39;t started show &quot;From Tue 16:00&quot;, and those whose window has passed show &quot;Missed&quot;. When no reward left to earn is in its window, the card says so, with the next start time, and counts as having no channel live. Live channels don&#39;t help then.</li>
-<li>&quot;Copy debug info&quot; now lists each reward&#39;s time window.</li>
+<li>A channel can be live with the game while Twitch doesn&#39;t run the campaign on that stream (seen with Overwatch&#39;s OWCS, where watching gave no progress). TDT now asks Twitch which campaigns run on the live channels it finds, and only counts a channel where this campaign runs. Otherwise the card is greyed out with &quot;1 live, but this campaign isn&#39;t running there right now&quot;.</li>
+<li>The live channels list behind <strong>N channels</strong> shows those channels last, greyed out, under &quot;Live, but this campaign isn&#39;t running there&quot;, and the line under the title counts them separately.</li>
+<li>This costs at most one more Twitch request per check, only when a channel is live. If Twitch doesn&#39;t answer it, TDT counts live channels as before.</li>
+<li>&quot;Copy debug info&quot; shows the last live check of each campaign: which live channels run it and which don&#39;t.</li>
 </ul>
 
     <details>
       <summary>Earlier versions</summary>
-      <h3>1.6.10</h3>
+      <h3>1.6.11</h3>
+<ul>
+<li><strong>Reward time windows</strong>: Twitch can let each reward of a campaign count only at certain times (e.g. one per match day, as with Overwatch&#39;s OWCS). Rewards whose window hasn&#39;t started show &quot;From Tue 16:00&quot;, and those whose window has passed show &quot;Missed&quot;. When no reward left to earn is in its window, the card says so, with the next start time, and counts as having no channel live. Live channels don&#39;t help then.</li>
+<li>&quot;Copy debug info&quot; now lists each reward&#39;s time window.</li>
+</ul>
+
+<h3>1.6.10</h3>
 <ul>
 <li>When Twitch&#39;s inventory doesn&#39;t answer in time (&quot;Inventory: service timeout&quot;), TDT now uses whatever part did arrive, and otherwise asks again for a smaller answer. Progress keeps updating as long as Twitch sends the drops in progress. If it still fails, the debug info names the part of the answer that timed out.</li>
 </ul>
@@ -342,7 +350,7 @@
 <li><strong>Ready to claim</strong> lists finished drops; <strong>Claim</strong> opens the inventory page.</li>
 <li>The badge shows the number of claimable drops (red <code>!</code> means the last check failed; open the popup to see why).</li>
 <li><strong>Full view</strong>: the ⤢ button in the popup opens a full-width page in a tab. It shows every active campaign as a card in columns: My campaigns, My searches, All campaigns and Finished. Each column scrolls on its own and has its own live filter (all typed words must appear in the game, campaign or publisher name):<ul>
-<li><strong>My campaigns</strong>: campaigns for your starred games, one per row like a queue. Campaigns that progressed at the last check come first, the rest are sorted by end date. Finished campaigns move to the Finished column instead. With each check TDT also looks whether the campaign can progress anywhere right now: if none of the channels it counts on is live with the game (or, for campaigns open to any channel, no stream with drops is live in the category), its card is greyed out with &quot;No channel live right now&quot;. Some campaigns let each reward count only at certain times (e.g. one per match day): when no reward left to earn is in its time window, the card is greyed out too and says when the next one starts, and each reward shows &quot;From …&quot; or &quot;Missed&quot;. A campaign that is progressing is never greyed out. <strong>Live only</strong> in the column header hides those cards.</li>
+<li><strong>My campaigns</strong>: campaigns for your starred games, one per row like a queue. Campaigns that progressed at the last check come first, the rest are sorted by end date. Finished campaigns move to the Finished column instead. With each check TDT also looks whether the campaign can progress anywhere right now: if none of the channels it counts on is live with the game (or, for campaigns open to any channel, no stream with drops is live in the category), its card is greyed out with &quot;No channel live right now&quot;. A channel only counts if Twitch actually runs the campaign on its stream: when the live ones don&#39;t, the card says &quot;1 live, but this campaign isn&#39;t running there right now&quot;. Some campaigns let each reward count only at certain times (e.g. one per match day): when no reward left to earn is in its time window, the card is greyed out too and says when the next one starts, and each reward shows &quot;From …&quot; or &quot;Missed&quot;. A campaign that is progressing is never greyed out. <strong>Live only</strong> in the column header hides those cards.</li>
 <li><strong>My searches</strong>: campaigns matching your saved searches. A campaign matches when it contains all words of the search. An exact game name ranks highest, then the whole phrase, then the words scattered. Remove a saved search with its ×.</li>
 <li><strong>All campaigns</strong>: everything else. <strong>Save search</strong> stores the current filter as a saved search, and its matches move to My searches.</li>
 <li><strong>Column widths</strong>: My searches and All campaigns fold into a thin strip while they show no card (also when <strong>New only</strong> hides everything, but not while you type in their filter), Finished while nothing is finished. Each of them can also be folded with its ‹ or › and opened by clicking the strip. The open columns share the space. My campaigns is always open and fills everything when it&#39;s alone. With just one other column besides Finished, the two share the width evenly. With more open, My campaigns and Finished get one column each and My searches and All campaigns share the rest, All campaigns taking the larger half. A wider column shows several cards per row.</li>
@@ -357,7 +365,7 @@
 <li><strong>Hide</strong>: the Hide button on a card removes that campaign from all columns and the toolbar popup, and stops its &quot;new match&quot;, &quot;ending soon&quot; and &quot;progress stopped&quot; alerts. Drops ready to claim are still shown. Hidden campaigns are listed under <strong>Hidden</strong> at the bottom of the sidebar (click to expand), with a filter and an <strong>Unhide</strong> button. They&#39;re forgotten once the campaign ends.</li>
 <li>Each card shows the rewards, your progress, and a channels button next to the campaign name. Channels open in a new tab next to the current one:<ul>
 <li><strong>▶ channel name</strong>: the campaign only counts on that one channel, and the button opens it directly.</li>
-<li><strong>N channels</strong>: the campaign only counts on specific channels. In the full view the button opens a list of those that are live with the game right now. It checks only as many channels as fill the list, starting with those live at the last check, and checks more as you scroll down. Click one to start watching. <strong>Category ↗</strong> opens the game&#39;s live channels with drops instead. In the toolbar popup the button opens the category.</li>
+<li><strong>N channels</strong>: the campaign only counts on specific channels. In the full view the button opens a list of those that are live with the game right now. Live channels where Twitch doesn&#39;t run this campaign are listed last, greyed out. It checks only as many channels as fill the list, starting with those live at the last check, and checks more as you scroll down. Click one to start watching. <strong>Category ↗</strong> opens the game&#39;s live channels with drops instead. In the toolbar popup the button opens the category.</li>
 <li><strong>Live channels</strong>: any channel with drops enabled counts, and the button opens the game&#39;s live channels with drops on Twitch.</li>
 </ul>
 </li>
